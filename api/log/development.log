@@ -1,0 +1,311 @@
+Started GET "/posts" for 10.0.2.2 at 2017-05-28 01:42:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:42:55 -0300
+Processing by WelcomeController#index as HTML
+Completed 204 No Content in 701ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:42:59 -0300
+Processing by WelcomeController#index as HTML
+Completed 204 No Content in 0ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:43:18 -0300
+Processing by WelcomeController#index as HTML
+Completed 204 No Content in 0ms
+
+
+Started GET "/welcome" for 10.0.2.2 at 2017-05-28 01:43:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/welcome"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/welcome" for 10.0.2.2 at 2017-05-28 01:43:42 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/welcome"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/" for 10.0.2.2 at 2017-05-28 01:43:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:44:00 -0300
+Processing by WelcomeController#index as HTML
+Completed 204 No Content in 0ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:44:14 -0300
+Processing by WelcomeController#index as */*
+Completed 204 No Content in 0ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:44:16 -0300
+Processing by WelcomeController#index as */*
+Completed 204 No Content in 0ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:47:45 -0300
+Processing by WelcomeController#index as */*
+Completed 204 No Content in 0ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:47:46 -0300
+Processing by WelcomeController#index as */*
+Completed 204 No Content in 3ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:47:47 -0300
+Processing by WelcomeController#index as */*
+Completed 204 No Content in 0ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:48:36 -0300
+Processing by WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+Completed 204 No Content in 1ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:49:34 -0300
+Processing by WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+Completed 204 No Content in 1117ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:51:39 -0300
+Processing by WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+Completed 204 No Content in 1ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:51:39 -0300
+Processing by WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+Completed 204 No Content in 1ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:51:40 -0300
+Processing by WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+Completed 204 No Content in 1ms
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:51:49 -0300
+Processing by WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+Completed 500 Internal Server Error in 1162ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x00000003fb3800>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:52:07 -0300
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 177ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x007fde4458d0c0>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:53:56 -0300
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 95ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x007fde443e56c8>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:53:59 -0300
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 96ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x00000003dfd1f0>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:54:06 -0300
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 88ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x0000000358edc0>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:54:08 -0300
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 88ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x007fde45333738>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:54:36 -0300
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 85ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x007fde44b3ff68>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:55:13 -0300
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 88ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x007fde447fe1b0>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:55:16 -0300
+Processing by WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+Completed 500 Internal Server Error in 102ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x007fde4468a270>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:58:01 -0300
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 83ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x007fde447b5438>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/api/" for 10.0.2.2 at 2017-05-28 01:58:42 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:58:56 -0300
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 91ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x0000000418dc98>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/" for 10.0.2.2 at 2017-05-28 01:59:10 -0300
+Processing by WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+Completed 500 Internal Server Error in 88ms
+
+
+  
+NoMethodError (undefined method `json_response' for #<WelcomeController:0x00000003d2e850>):
+  
+app/controllers/welcome_controller.rb:3:in `index'
