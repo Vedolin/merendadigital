@@ -3,37 +3,29 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import {
-  MdButtonModule,
-  MdCheckboxModule,
-  MdMenuModule,
-  MdCardModule,
-  MdIconModule
-} from '@angular/material';
+import { MaterialModule } from './material.module';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 import 'hammerjs';
 
-import { AppComponent } from './app.component';
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
+    HomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
 
-    BrowserAnimationsModule,
-    MdButtonModule,
-    MdCheckboxModule,
-    MdMenuModule,
-    MdCardModule,
-    MdIconModule
+    MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ],
 })
 export class AppModule { }
