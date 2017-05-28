@@ -1,0 +1,17 @@
+rails destroy scaffold Ingredient
+rails destroy scaffold Preparation
+rails destroy scaffold Presentation
+rails destroy scaffold Contract
+rails destroy scaffold Audience
+rails destroy scaffold Dish
+rails destroy scaffold Meal
+rails generate scaffold Presentation name:string description:text ingredient:references
+rails generate scaffold Preparation name:string description:text ingredient:references
+rails generate scaffold Ingredient name:string dish:references
+rails generate scaffold Dish name:string meal:references
+rails generate scaffold Audience name:string min_age:integer max_age:integer meal:references ue:references
+rails generate scaffold Contract name:string meal:references
+rails generate scaffold Meal name:string UE:references 
+rails generate scaffold Citizen_rate stars:integer comment:text ue:references
+rails generate scaffold Group name:string 
+
