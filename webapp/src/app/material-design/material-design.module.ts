@@ -1,32 +1,37 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
   MdButtonModule,
-  MdCheckboxModule,
-  MdMenuModule,
   MdCardModule,
+  MdMenuModule,
+  MdToolbarModule,
   MdIconModule,
-  MdIconRegistry
+  MdCheckboxModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
+    CommonModule,
     BrowserAnimationsModule,
     MdButtonModule,
-    MdCheckboxModule,
-    MdMenuModule,
     MdCardModule,
-    MdIconModule
+    MdMenuModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdCheckboxModule,
   ],
   exports: [
     BrowserAnimationsModule,
     MdButtonModule,
-    MdCheckboxModule,
-    MdMenuModule,
     MdCardModule,
-    MdIconModule
+    MdMenuModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdCheckboxModule
   ],
-  providers: [ MdIconRegistry ],
+  declarations: [],
+  providers: [],
 })
-export class MaterialModule { }
+export class MaterialDesignModule { }

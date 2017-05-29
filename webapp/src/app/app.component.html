@@ -1,3 +1,27 @@
-<div class="md-toolbar">
-  <h1>{{ title }}</h1>
+<md-toolbar color="primary">
+  <button md-button [mdMenuTriggerFor]="appMenu">
+    <md-icon>menu</md-icon>
+  </button>
+  <span>{{ title }}</span>
+  <span class="example-spacer"></span>
+</md-toolbar>
+
+<md-menu #appMenu="mdMenu">
+  <button routerLink="" md-menu-item>
+    <md-icon>home</md-icon>
+    Home
+  </button>
+  <button routerLink="/about" md-menu-item>
+    <md-icon>help</md-icon>
+    Sobre
+  </button>
+</md-menu>
+
+<!--
+<a routerLink="">Home</a>
+<a routerLink="/about">Sobre</a>
+-->
+
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
