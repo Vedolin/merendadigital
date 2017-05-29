@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528185456) do
+ActiveRecord::Schema.define(version: 20170528200711) do
 
   create_table "audiences", force: :cascade do |t|
     t.string "name"
@@ -65,10 +65,10 @@ ActiveRecord::Schema.define(version: 20170528185456) do
 
   create_table "meals", force: :cascade do |t|
     t.string "name"
-    t.integer "UE_id"
+    t.integer "ue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["UE_id"], name: "index_meals_on_UE_id"
+    t.index ["ue_id"], name: "index_meals_on_ue_id"
   end
 
   create_table "preparations", force: :cascade do |t|
@@ -87,6 +87,12 @@ ActiveRecord::Schema.define(version: 20170528185456) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ingredient_id"], name: "index_presentations_on_ingredient_id"
+  end
+
+  create_table "ues", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

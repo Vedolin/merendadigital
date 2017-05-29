@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  ue: one
 
 two:
   name: MyString
-  ue: two

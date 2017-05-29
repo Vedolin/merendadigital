@@ -1,3 +1,3 @@
 class Meal < ApplicationRecord
-  belongs_to :UE
+  belongs_to :ue
 end
