@@ -8,8 +8,18 @@
     </button>
     <hr>
 
-    <a routerLink="" (click)="sidenav.close()">Home</a>
-    <a routerLink="/about" (click)="sidenav.close()">Sobre</a>
+    <md-nav-list>
+      <md-list-item routerLinkActive="active">
+        <md-icon>home</md-icon>
+        <a md-line routerLink="/" (click)="sidenav.close()">Home</a>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item routerLinkActive="active">
+        <md-icon>info</md-icon>
+        <a md-line routerLink="/about" (click)="sidenav.close()">Sobre</a>
+      </md-list-item>
+      <md-divider></md-divider>
+    </md-nav-list>
 
   </md-sidenav>
 
