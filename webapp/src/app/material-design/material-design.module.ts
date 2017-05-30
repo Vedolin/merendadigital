@@ -8,7 +8,9 @@ import {
   MdMenuModule,
   MdToolbarModule,
   MdIconModule,
-  MdCheckboxModule
+  MdCheckboxModule,
+  MaterialModule,
+  MdNativeDateModule
 } from '@angular/material';
 
 @NgModule({
@@ -21,6 +23,8 @@ import {
     MdToolbarModule,
     MdIconModule,
     MdCheckboxModule,
+    MaterialModule,
+    MdNativeDateModule,
   ],
   exports: [
     BrowserAnimationsModule,
@@ -29,7 +33,9 @@ import {
     MdMenuModule,
     MdToolbarModule,
     MdIconModule,
-    MdCheckboxModule
+    MdCheckboxModule,
+    MaterialModule,
+    MdNativeDateModule
   ],
   declarations: [],
   providers: [],
