@@ -10,14 +10,17 @@ import { MaterialDesignModule } from './material-design/material-design.module';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+
+import { HomeModule } from './home/home.module';
+import { HomeService } from './home/home.service';
 
 @NgModule({
   declarations: [
     AppComponent,
 
-    HomeComponent,
+    // HomeComponent,
     AboutComponent,
   ],
   imports: [
@@ -28,8 +31,10 @@ import { AboutComponent } from './about/about.component';
     MaterialDesignModule,
 
     routing,
+
+    HomeModule
   ],
-  providers: [],
+  providers: [ HomeService ],
   bootstrap: [ AppComponent ],
 })
 export class AppModule { }
