@@ -51,3 +51,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # http://tech.eshaiju.in/blog/2017/05/06/a-graphql-server-implementation-ruby-on-rails/
 gem "graphql"
 gem 'graphiql-rails', group: :development
+
+gem 'devise'
+gem 'jwt'

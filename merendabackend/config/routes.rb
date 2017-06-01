@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  post 'auth_user' => 'authentication#authenticate_user'
+  devise_for :users
 
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
@@ -21,7 +22,10 @@ Rails.application.routes.draw do
   resources :citizen_rates
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get 'home' => 'home#index'
+
   # API welcome message
+  get 'welcome/index'
   get 'welcome', to: 'welcome#index'
   root 'welcome#index'
 end
