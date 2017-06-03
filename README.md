@@ -4,11 +4,15 @@ Parceria com a Secretaria Municipal de Educação da Prefeitura de São Paulo.
 
 ...
 
+
 ## Começando
+
+Leia os arquivos README.md abaixo, para começar.
 
 [merendabackend](./merendabackend/README.md)
 
-[webapp](webapp/README.md)
+[webapp](./webapp/README.md)
+
 
 ## Como Contribuir
 
@@ -18,6 +22,7 @@ Parceria com a Secretaria Municipal de Educação da Prefeitura de São Paulo.
 ## Status do Código
 
 ...
+
 
 ## Licença
 
