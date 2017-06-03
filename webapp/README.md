@@ -1,5 +1,29 @@
 # Webapp
 
+O projeto webapp é feito em Angular 4. Siga os paços abaixo para configurar seu ambiente.
+
+Abra seu terminal e digite:
+
+$ npm install -g @angular/cli
+
+Este comando ira instalar a ClI - Command Line Interface do Angular.
+
+Após a instalação entre no diretório webapp/ dentro da pasta do projeto:
+
+$ cd merendadigital/webapp && npm install
+
+Para executar o projeto digite:
+
+$ ng serve
+
+Para executar os testes:
+
+$ ng test
+
+
+Para mais informações sobre o Angular CLI visite o link: 
+[Angular CLI](https://github.com/angular/angular-cli).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
 ## Development server

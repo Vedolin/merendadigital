@@ -6,7 +6,9 @@ Parceria com a Secretaria Municipal de Educação da Prefeitura de São Paulo.
 
 ## Começando
 
-...
+[merendabackend](./merendabackend/README.md)
+
+[webapp](webapp/README.md)
 
 ## Como Contribuir
 
