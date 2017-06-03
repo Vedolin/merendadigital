@@ -1,6 +1,6 @@
 # Merenda Digital
 
-Parceria com a Secretaria Municipal de Educação da Prefeitura de São Paulo.
+Parceria com a Secretaria Municipal   de Educação da Prefeitura de São Paulo.
 
 ...
 
@@ -12,6 +12,18 @@ Leia os arquivos README.md abaixo, para começar.
 [merendabackend](./merendabackend/README.md)
 
 [webapp](./webapp/README.md)
+
+Ou use o container docker seguindo os seguintes comandos.
+Na raiz do projeto merendadigital/ digite:
+
+$ docker-compose build
+$ docker-compose up
+
+Limpando os containers:
+
+$ docker rm $(docker ps -a -q)
+
+$ docker rmi $(docker images -q)
 
 
 ## Como Contribuir
