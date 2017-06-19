@@ -1,38 +1,50 @@
-<md-sidenav-container class="sidenav-container">
-  <md-sidenav #sidenav class="sidenav">
-  <!-- <md-sidenav #sidenav class="sidenav sidenav-fullscreen"> -->
+<!-- Navbar goes here -->
+<nav class="nav-default-color">
+    <div class="nav-wrapper">
+        <a routerLink="/" class="brand-logo">{{ title }}</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li routerLinkActive="active">
+                <a md-line routerLink="/">Home</a>
+            </li>
+            <li routerLinkActive="active">
+                <a md-line routerLink="/about">Sobre</a>
+            </li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li routerLinkActive="active">
+                <a md-line routerLink="/">Home</a>
+            </li>
+            <li routerLinkActive="active">
+                <a md-line routerLink="/about">Sobre</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    Menu Principal
-    <button md-button (click)="sidenav.close()">
-      <md-icon>close</md-icon>
-    </button>
-    <hr>
+<!-- Page Layout here -->
+<div class="row">
+    <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+        <!-- Grey navigation panel
+            This content will be:
+            3-columns-wide on large screens,
+            4-columns-wide on medium screens,
+            12-columns-wide on small screens
+        -->
+    </div>
 
-    <md-nav-list>
-      <md-list-item routerLinkActive="active">
-        <md-icon>home</md-icon>
-        <a md-line routerLink="/" (click)="sidenav.close()">Home</a>
-      </md-list-item>
-      <md-divider></md-divider>
-      <md-list-item routerLinkActive="active">
-        <md-icon>info</md-icon>
-        <a md-line routerLink="/about" (click)="sidenav.close()">Sobre</a>
-      </md-list-item>
-      <md-divider></md-divider>
-    </md-nav-list>
+    <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+        <!-- Teal page content
+            This content will be:
+            9-columns-wide on large screens,
+            8-columns-wide on medium screens,
+            12-columns-wide on small screens
+        -->
 
-  </md-sidenav>
-
-  <md-toolbar color="primary">
-    <button md-button (click)="sidenav.open()">
-      <md-icon>menu</md-icon>
-    </button>
-    <span class="app-title">{{ title }}</span>
-    <span class="toolbar-spacer"></span>
-  </md-toolbar>
-
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
-
-</md-sidenav-container>
+        <div class="">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

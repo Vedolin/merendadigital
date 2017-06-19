@@ -1,4 +1,4 @@
-FROM ruby:2.4
+FROM ruby:2.4.1
 MAINTAINER henrique.contato@outlook.com
 
 # Install apt based dependencies required to run Rails as
