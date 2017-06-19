@@ -1,0 +1,38 @@
+<md-sidenav-container class="sidenav-container">
+  <md-sidenav #sidenav class="sidenav">
+  <!-- <md-sidenav #sidenav class="sidenav sidenav-fullscreen"> -->
+
+    Menu Principal
+    <button md-button (click)="sidenav.close()">
+      <md-icon>close</md-icon>
+    </button>
+    <hr>
+
+    <md-nav-list>
+      <md-list-item routerLinkActive="active">
+        <md-icon>home</md-icon>
+        <a md-line routerLink="/" (click)="sidenav.close()">Home</a>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item routerLinkActive="active">
+        <md-icon>info</md-icon>
+        <a md-line routerLink="/about" (click)="sidenav.close()">Sobre</a>
+      </md-list-item>
+      <md-divider></md-divider>
+    </md-nav-list>
+
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button md-button (click)="sidenav.open()">
+      <md-icon>menu</md-icon>
+    </button>
+    <span class="app-title">{{ title }}</span>
+    <span class="toolbar-spacer"></span>
+  </md-toolbar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+</md-sidenav-container>

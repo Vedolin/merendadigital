@@ -1,13 +1,13 @@
 app:
   build: ./merendabackend
-  command: rails server -p 3000 -b '0.0.0.0'
+  # command: bin/bundle exec bin/rails server -p 3000 -b '0.0.0.0'
   volumes:
     - ./merendabackend:/app
   ports:
     - "3000:3000"
-  links:
-    - postgres
-postgres:
-  image: postgres:9.4
-  ports:
-    - "5432"
+#   links:
+#     - postgres
+# postgres:
+#   image: postgres:9.4
+#   ports:
+#     - "5432"

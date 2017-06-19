@@ -33,3 +33,11 @@ h1 {
 .active {
   color: green;
 }
+
+.brand-logo {
+    margin-left: 7px;
+}
+
+.nav-default-color {
+    background-color: #ce124a
+}
