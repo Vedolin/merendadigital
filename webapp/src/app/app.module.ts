@@ -1,5 +1,6 @@
 import 'hammerjs';
 import 'materialize-css';
+import * as $ from 'jquery';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
