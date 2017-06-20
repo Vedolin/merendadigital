@@ -12,7 +12,7 @@ class MealsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create meal" do
     assert_difference('Meal.count') do
-      post meals_url, params: { meal: { name: @meal.name, ue_id: @meal.ue_id } }, as: :json
+      post meals_url, params: { meal: { age_id: @meal.age_id, kind_id: @meal.kind_id, planned: @meal.planned, scheduled_to: @meal.scheduled_to, school_id: @meal.school_id, served: @meal.served } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class MealsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update meal" do
-    patch meal_url(@meal), params: { meal: { name: @meal.name, ue_id: @meal.ue_id } }, as: :json
+    patch meal_url(@meal), params: { meal: { age_id: @meal.age_id, kind_id: @meal.kind_id, planned: @meal.planned, scheduled_to: @meal.scheduled_to, school_id: @meal.school_id, served: @meal.served } }, as: :json
     assert_response 200
   end
 

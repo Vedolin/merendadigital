@@ -1,2 +1,0 @@
-class Ue < ApplicationRecord
-end

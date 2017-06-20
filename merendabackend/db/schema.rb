@@ -10,43 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601013552) do
+ActiveRecord::Schema.define(version: 20170620013717) do
 
-  create_table "audiences", force: :cascade do |t|
+  create_table "ages", force: :cascade do |t|
     t.string "name"
-    t.integer "min_age"
-    t.integer "max_age"
-    t.integer "meal_id"
-    t.integer "ue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["meal_id"], name: "index_audiences_on_meal_id"
-    t.index ["ue_id"], name: "index_audiences_on_ue_id"
   end
 
-  create_table "citizen_rates", force: :cascade do |t|
-    t.integer "stars"
-    t.text "comment"
-    t.integer "ue_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ue_id"], name: "index_citizen_rates_on_ue_id"
-  end
-
-  create_table "contracts", force: :cascade do |t|
+  create_table "executions", force: :cascade do |t|
     t.string "name"
-    t.integer "meal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["meal_id"], name: "index_contracts_on_meal_id"
-  end
-
-  create_table "dishes", force: :cascade do |t|
-    t.string "name"
-    t.integer "meal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["meal_id"], name: "index_dishes_on_meal_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -55,44 +30,35 @@ ActiveRecord::Schema.define(version: 20170601013552) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ingredients", force: :cascade do |t|
+  create_table "kinds", force: :cascade do |t|
     t.string "name"
-    t.integer "dish_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dish_id"], name: "index_ingredients_on_dish_id"
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string "name"
-    t.integer "ue_id"
+    t.text "planned"
+    t.text "served"
+    t.date "scheduled_to"
+    t.integer "age_id"
+    t.integer "kind_id"
+    t.integer "school_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ue_id"], name: "index_meals_on_ue_id"
+    t.index ["age_id"], name: "index_meals_on_age_id"
+    t.index ["kind_id"], name: "index_meals_on_kind_id"
+    t.index ["school_id"], name: "index_meals_on_school_id"
   end
 
-  create_table "preparations", force: :cascade do |t|
+  create_table "schools", force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.integer "ingredient_id"
+    t.text "address"
+    t.integer "execution_id"
+    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ingredient_id"], name: "index_preparations_on_ingredient_id"
-  end
-
-  create_table "presentations", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "ingredient_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ingredient_id"], name: "index_presentations_on_ingredient_id"
-  end
-
-  create_table "ues", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["execution_id"], name: "index_schools_on_execution_id"
+    t.index ["group_id"], name: "index_schools_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|

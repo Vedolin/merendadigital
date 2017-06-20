@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :meals
+  resources :schools
+  resources :kinds
+  resources :ages
+  resources :executions
+  resources :groups
   post 'auth_user' => 'authentication#authenticate_user'
   devise_for :users
 
@@ -11,14 +17,12 @@ Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
 
   resources :ues
-  resources :meals
   resources :contracts
   resources :audiences
   resources :dishes
   resources :ingredients
   resources :preparations
   resources :presentations
-  resources :groups
   resources :citizen_rates
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

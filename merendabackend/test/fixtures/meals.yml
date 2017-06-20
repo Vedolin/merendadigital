@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  ue: one
+  planned: MyText
+  served: MyText
+  scheduled_to: 2017-06-19
+  age: one
+  kind: one
+  school: one
 
 two:
-  name: MyString
-  ue: two
+  planned: MyText
+  served: MyText
+  scheduled_to: 2017-06-19
+  age: two
+  kind: two
+  school: two
