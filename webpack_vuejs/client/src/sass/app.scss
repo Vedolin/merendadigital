@@ -1,0 +1,12 @@
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../../../node_modules/bootstrap/dist/css/bootstrap-theme.css";
+
+$primary: #ffffff;
+
+body {
+  background-color: $primary;
+}
+
+.test {
+  background: url('../images/stub.jpg');
+}

@@ -1,4 +1,5 @@
 import 'hammerjs';
+import 'materialize-css';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -6,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // import { MaterialDesignModule } from './material-design/material-design.module';
-
 import { MaterializeModule } from 'angular2-materialize';
 
 import { routing } from './app.routing';
@@ -31,6 +31,7 @@ import { HomeService } from './home/home.service';
     HttpModule,
 
     // MaterialDesignModule,
+    MaterializeModule,
 
     routing,
 
