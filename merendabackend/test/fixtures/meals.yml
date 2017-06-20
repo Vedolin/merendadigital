@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  planned: MyText
+  served: MyText
+  scheduled_to: 2017-06-19
+  age: one
+  kind: one
+  school: one
+
+two:
+  planned: MyText
+  served: MyText
+  scheduled_to: 2017-06-19
+  age: two
+  kind: two
+  school: two
