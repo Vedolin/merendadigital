@@ -19,5 +19,6 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    $(".dropdown-button").dropdown();
   }
 }
