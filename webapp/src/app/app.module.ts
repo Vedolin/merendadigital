@@ -18,6 +18,7 @@ import { AboutComponent } from './about/about.component';
 
 import { HomeModule } from './home/home.module';
 import { HomeService } from './home/home.service';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { HomeService } from './home/home.service';
 
     // HomeComponent,
     AboutComponent,
+
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule,

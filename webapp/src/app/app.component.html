@@ -1,50 +1,37 @@
-<!-- Navbar goes here -->
-<nav id="rm" class="nav-default-color">
-    <div class="nav-wrapper">
-        <a routerLink="/" class="brand-logo">{{ title }}</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse">
-            <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-            <li routerLinkActive="active">
-                <a md-line routerLink="/">Home</a>
-            </li>
-            <li routerLinkActive="active">
-                <a md-line routerLink="/about">Sobre</a>
-            </li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-            <li routerLinkActive="active">
-                <a md-line routerLink="/">Home</a>
-            </li>
-            <li routerLinkActive="active">
-                <a md-line routerLink="/about">Sobre</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">{{ title }}</span>
+            <div class="mdl-layout-spacer"></div>
+                <!--
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="#">Home</a>
+                    <a class="mdl-navigation__link" href="#">About</a>
+                    <a class="mdl-navigation__link" href="#">Contact</a>
+                  </nav>
+                -->
 
-<!-- Page Layout here -->
-<div class="row">
-    <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
-        <!-- Grey navigation panel
-            This content will be:
-            3-columns-wide on large screens,
-            4-columns-wide on medium screens,
-            12-columns-wide on small screens
-        -->
-    </div>
-
-    <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
-        <!-- Teal page content
-            This content will be:
-            9-columns-wide on large screens,
-            8-columns-wide on medium screens,
-            12-columns-wide on small screens
-        -->
-
-        <div class="">
-            <router-outlet></router-outlet>
+              <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                  <label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable">
+                      <i class="material-icons">search</i>
+                  </label>
+                  <div class="mdl-textfield__expandable-holder">
+                      <input class="mdl-textfield__input" type="text" id="search-expandable" />
+                      <label class="mdl-textfield__label" for="search-expandable">Search text</label>
+                  </div>
+              </div> -->
         </div>
-    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">MENU</span>
+    <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" (click)="sidenav.close()" routerLink="/">Home</a>
+        <a class="mdl-navigation__link"  routerLink="/about">Sobre</a>
+        <a class="mdl-navigation__link"  routerLink="/statistics">Gráficos</a>
+    </nav>
+  </div>
+
+  <div class="container app-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
