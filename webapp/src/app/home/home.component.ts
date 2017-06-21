@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import 'hammerjs';
+import * as $ from 'jquery';
 
 import { HomeService } from './home.service';
 
 @Component({
   selector: 'home-component',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: [ './home.component.css' ],
   providers: [ HomeService ],
 })
 export class HomeComponent implements OnInit {
