@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import 'hammerjs';
+import * as $ from 'jquery';
 
 import { HomeService } from './home.service';
 
@@ -17,7 +19,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-      
   }
 
 }
