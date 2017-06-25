@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Faceted Search JavaScript Library
+    </title>
+    <style>
+
+      /* First come the styles which are used in the demo */
+
+      * {
+          padding: 3px;
+      }
+
+      .facetsearch {
+        display: inline-block;
+        width: 200px;
+        vertical-align: top;
+      }
+      .activeorderby,
+      .activefacet {
+        color: red;
+      }
+      .bottomline {
+        padding: 10px 0 10px 0;
+        font-weight: bold;
+      }
+      .bottomline .orderby,
+      .bottomline .facettotalcount {
+        display: inline-block;
+      }
+      .bottomline .orderby ul,
+      .bottomline .orderby li {
+        display: inline;
+        padding: 0;
+      }
+      .bottomline .orderby-title {
+        margin: 0 0 0 10px;
+      }
+      .bottomline .deselectstartover {
+        float: right;
+      }
+      #language {
+        width: 400px;
+      }
+      #language .facetlist{
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        -o-column-count: 2;
+      }
+      .item {
+        width: 150px;
+        height: 250px;
+        margin: 0 10px 10px 0;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .item h4 {
+        font-size: 1.2em;
+      }
+      .item .tags {
+        font-weight: bold;
+        color: gray;
+      }
+      #showmorebutton {
+        border: 1px solid #AAA;
+        border-radius: 15px;
+        background-color: #DDD;
+        margin: 0 0 10px 0;
+        padding: 10px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      /* These styles are just general purpose styles to make the page look a little less aweful */
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 20px;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      #wrapper, #documentation {
+        margin: 0 auto;
+        width: 800px;
+      }
+      p {
+        padding-bottom: 1em;
+        line-height: 1.3em;
+      }
+      h1, h2, h3{
+        margin: 0 0 1em 0;
+      }
+      tt {
+        background-color: #EEE;
+        border: 1px solid #CCC;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="http://github.com/eikes/facetedsearch"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+    <div id=wrapper>
+
+
+      <!-- Here comes the demo, if you want to copy and paste, start here -->
+
+      <h2>Demo</h2>
+      <div id=facets></div>
+      <div id=results></div>
+    </div>
+    <script src="dependencies/jquery-1.6.2.js"></script>
+    <script src="dependencies/underscore-1.1.7.js"></script>
+    <script src="facetedsearch.js"></script>
+    <script>
+      $(function(){
+          var item_template =
+           '<div class="item">' +
+             '<img src="<%= obj.imageURL %>">' +
+             '<h4><%= obj.lastname %>, <%= obj.firstname %></h4>' +
+             '<p class="tags">' +
+             '<% if (obj.category) {  %><%= obj.category %><% } %>' +
+             '<% if (obj.continent) {  %>, <%= obj.continent %><% } %>' +
+             '<% if (obj.language) {  %>, <%= obj.language %><% } %>' +
+             '</p>' +
+             '<p class="desc"><%= obj.description %></p>' +
+           '</div>';
+        settings = {
+          items            : example_items,
+          facets           : {
+                              'category'     : 'Agrupamento',
+                              'continent'    : 'Gestao',
+                              'language'     : 'Diretoria'
+          },
+          resultSelector   : '#results',
+          facetSelector    : '#facets',
+          resultTemplate   : item_template,
+          paginationCount  : 50,
+          orderByOptions   : {'firstname': 'UE', 'lastname': 'Diretoria', 'category': 'Category', 'RANDOM': 'Random'},
+          facetSortOption  : {'continent': ["DIRETA", "TERCEIRIZADA"]}
+        }
+
+        // use them!
+        $.facetelize(settings);
+
+      });
+    </script>
+    <script>
+      // Most of the time I suppose you would use jQuery to get your data;
+      /*
+        $.getJSON( "http:/example.com", function(data){
+          $.facetelize....
+        });
+      */
+      var example_items = [
+      {"firstname": "CEI CONV. RECANTO DA ALEGRIA I","lastname": "CEI CONVENIADO","description": "R. FRANCISCO REBOLO, 6","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO BUTANTA","OUTRA"],"continent": "DIRETA"},
+      {"firstname": "CEI MUN. JD. NOVO PARELHEIROS (TERC)","lastname": "CEI MUNICIPAL","description": "R. TEREZINHA PRADO DE OLIVEIRA, 52","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAPELA DO SOCORRO"],"continent": "TERCEIRIZADA"},
+{"firstname": "CEI MUN. JD. SILVEIRA - (TERCEI.)","lastname": "CEI MUNICIPAL","description": "R. ANTONIO BERNAL, 72","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAPELA DO SOCORRO"],"continent": "TERCEIRIZADA"},
+
+{"firstname": "EMEI ANITA GARIBALDI (TERC)","lastname": "EMEI","description": "R. OTELO ZELONI, 60","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO FREGUESIA/BRASILANDIA"],"continent": "TERCEIRIZADA"},
+{"firstname": "CEU EMEI DA PAZ - (TERCEI.)","lastname": "EMEI","description": "RUA DANIEL CERRI, 1549","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO FREGUESIA/BRASILANDIA"],"continent": "TERCEIRIZADA"},
+{"firstname": "EMEI BOMB. JOSÉ ROBSON COSTA DE ARAÚJO - (TERCEI.)","lastname": "EMEI","description": "R. MONS. PAULO FERNANDES BARROS, S/N","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO FREGUESIA/BRASILANDIA"],"continent": "TERCEIRIZADA"},
+{"firstname": "EMEI VER. ALEX FREUA NETTO - (TERCEI.)","lastname": "EMEI","description": "R. SANTANA DO ARACUAI, 185","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO FREGUESIA/BRASILANDIA"],"continent": "TERCEIRIZADA"},
+{"firstname": "SME CONV. IMT NANY APPLE","lastname": "SME CONVÊNIO","description": "RUA DIOGO DOMINGUES, 67","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO FREGUESIA/BRASILANDIA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV.  ANÍBAL DI FRÂNCIA","lastname": "CEI CONVENIADO","description": "R. CAP. FRANCISCO TEIXEIRA NOGUEIRA, 383","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO PIRITUBA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. EDUCANDÁRIO SÃO DOMINGOS","lastname": "CEI CONVENIADO","description": "R PRESGRAVE DO AMARAL, 160","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO PIRITUBA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. INST. N. SRA. DE ANUNCIAÇÃO","lastname": "CEI CONVENIADO","description": "R. CONSELHEIRO OLEGÁRIO, 54","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO PIRITUBA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. MD. CAMILA I","lastname": "CEI CONVENIADO","description": "R. FREI PAULO DE SOROCABA, 164","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO PIRITUBA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. MMDC. ASSOC. CIVITA FEMININA","lastname": "CEI CONVENIADO","description": "R. MINISTRO GODOY, 81","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO PIRITUBA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. VL. ANGLO","lastname": "CEI CONVENIADO","description": "R. DANIEL CARDOSO, 129","category": "3","language": ["DIRETORIA REGIONAL DE EDUCACAO PIRITUBA"],"continent": "DIRETA"},
+
+
+{"firstname": "EMEI PROFA. OLANDYA PERES RIBEIRO - (TERCEI.)","lastname": "EMEI","description": "R. DR. MARIANO CURSINO DE MOURA, 395","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO ITAQUERA"],"continent": "TERCEIRIZADA"},
+{"firstname": "EMEI PROFA. SUZANA EVANGELINA FELIPPE - (TERCEI.)","lastname": "EMEI","description": "PÇA. HAROLDO DALTRO, S/N","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO ITAQUERA"],"continent": "TERCEIRIZADA"},
+{"firstname": "EMEI PROFA. NEYL GOMEZ MARTIN - (TERCEI.)","lastname": "EMEI","description": "R. MIGUEL BASTOS SOARES, 275","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO ITAQUERA"],"continent": "TERCEIRIZADA"},
+{"firstname": "EMEI JOÃO RUBENS MARCELO","lastname": "EMEI","description": "R. AZEVEDO E BRITO, 395","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO ITAQUERA"],"continent": "DIRETA"},
+{"firstname": "EMEI FRANCISCO ROQUETTI - (TERCEI.)","lastname": "EMEI","description": "PÇA. LEÃO X, S/N","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO ITAQUERA"],"continent": "TERCEIRIZADA"},
+{"firstname": "SME CONV. LAR MÃE DO DIVINO AMOR","lastname": "SME CONVÊNIO","description": "R. FRANCISCO ZICCARDI, 420","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO ITAQUERA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. FREI SERGIO CALIXTO VAL VERDE","lastname": "CEI CONVENIADO","description": "R. CANÇÃO DO EXILIO, 175","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. N. SRA. DAS MERCÊS","lastname": "CEI CONVENIADO","description": "R. JULIO FELIPE GUEDES, 200","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. LAR DE ASSISTÊNCIA À CRIANÇA JOEL CORREA DE ÁVILA","lastname": "CEI CONVENIADO","description": "R. AGOSTINHO  GOMES, 2235","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. SÃO VICENTE PALLOTTI","lastname": "CEI CONVENIADO","description": "R. MARECHAL PIMENTEL, 264","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. LUZ DO AMANHÃ","lastname": "CEI CONVENIADO","description": "R. TAMUATÁ, 163","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. OFICINA DE CRIANÇA","lastname": "CEI CONVENIADO","description": "R. N. SRA. DAS MERCÊS, 1418","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. NOSSA CRECHE II","lastname": "CEI CONVENIADO","description": "R. JAPARATUBA, 296","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. GIRASSOL","lastname": "CEI CONVENIADO","description": "R. ALMIRANTE MARIATH, 44","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. PAULO FREIRE","lastname": "CEI CONVENIADO","description": "ESTR. DAS LÁGRIMAS, 1046","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. LAR DO AMOR CRISTÃO","lastname": "CEI CONVENIADO","description": "R. DOIS DE JULHO, 384","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"},
+
+{"firstname": "EMEI OSCAR PEDROSO HORTA - (MIST)","lastname": "EMEI","description": "R. PAULO MARANHÃO, 36","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO BUTANTA"],"continent": "MISTA"},
+{"firstname": "EMEI PROF. ANTONIO CARLOS PACHECO E SILVA (MIST)","lastname": "EMEI","description": "AV. JOÃO CAIAFFA, 90","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO BUTANTA"],"continent": "MISTA"},
+{"firstname": "EMEI PROFA. MARIAZINHA REZENDE FUSARI - (MIST)","lastname": "EMEI","description": "R. EUDORO LINCOLN BERLINK, 118","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO BUTANTA"],"continent": "MISTA"},
+{"firstname": "EMEI PROF. BENEDICTO CASTRUCCI (MIST)","lastname": "EMEI","description": "R. CACHOEIRA PORAQUÊ, S/N","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO BUTANTA"],"continent": "MISTA"},
+{"firstname": "EMEI ANTONIO BENTO - (MIST)","lastname": "EMEI","description": "R. JOÃO BATISTA DE SOUZA FILHO, 405","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO BUTANTA"],"continent": "MISTA"},
+{"firstname": "EMEI MONTE CASTELO - (MIST)","lastname": "EMEI","description": "PÇA. MONTE CASTELO, 49","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO BUTANTA"],"continent": "MISTA"},
+{"firstname": "CEI CONV. DA PARÓQUIA DE SÃO SEBASTIÃO","lastname": "CEI CONVENIADO","description": "R. PROF. WASHINGTON PIRES, 123","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. JD. LUZITANIA","lastname": "CEI CONVENIADO","description": "R. FREI XISTO TEUBER, 189","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. CASA SÃO JOSÉ - LAR DA INFÂNCIA","lastname": "CEI CONVENIADO","description": "R. ANTONIO CALDAS, 88","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. SÃO JOSÉ OPERÁRIO I","lastname": "CEI CONVENIADO","description": "R. FRANCISCO DE ABREU, 130","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. ABÍLIO CÉSAR","lastname": "CEI CONVENIADO","description": "R. ABÍLIO CÉSAR, 1030","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. JD. IRENE IRAPIRANGA","lastname": "CEI CONVENIADO","description": "R. BICCI DI LORENZO, 100","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV CAMPO LIMPO IV","lastname": "CEI CONVENIADO","description": "R. ANTONIO ANTUNES, 215","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. BELEZINHA II","lastname": "CEI CONVENIADO","description": "R. AMÉLIA DA SILVA LAGO, 209","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. SÃO JOSÉ OPERÁRIO II","lastname": "CEI CONVENIADO","description": "R. PIETRO SOLARI, 8","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV CAMINHAR","lastname": "CEI CONVENIADO","description": "RUA JOAQUIM XAVIER CURADO, 203","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. CEDRO DO LÍBANO V","lastname": "CEI CONVENIADO","description": "RUA FRANCISCO DE NÓBREGA, 162","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. PÉRSIO GUIMARÃES AZEVEDO","lastname": "CEI CONVENIADO","description": "RUA ARQUITETO ROBERTO PATRÃO DE ASSIS, 114","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. CASA PADRE RAFAEL","lastname": "CEI CONVENIADO","description": "ESTRADA DO CAMPO LIMPO, 5295","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. ANGLICANA RENATA EUGENIA RODRIGUES","lastname": "CEI CONVENIADO","description": "R: DR. JOSÉ PEDRO DE CARVALHO LIMA, 333","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. BELEZINHA","lastname": "CEI CONVENIADO","description": "R. CANTANHEDE - CONJ. HAB. STO AMARO C, 300","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+{"firstname": "CEI CONV UMA NOVA HISTÓRIA","lastname": "CEI CONVENIADO","description": "R. DIOGO RODRIGUES, 96","category": "1","language": ["DIRETORIA REGIONAL DE EDUCACAO CAMPO LIMPO"],"continent": "DIRETA"},
+
+
+{"firstname": "EMEI MARGARIDA MARIA ALVES (TERC)","lastname": "EMEI","description": "R. STO. RIZZO, 10","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO GUAIANASES"],"continent": "TERCEIRIZADA"},
+{"firstname": "EMEI ADONIRAN BARBOSA - (TERCEI.)","lastname": "EMEI","description": "R. DOS PEDREIROS, 167","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO GUAIANASES"],"continent": "TERCEIRIZADA"},
+{"firstname": "EMEI CARLOTA PEREIRA DE QUEIROZ (TERC)","lastname": "EMEI","description": "R. FERNANDO GANGA, 25","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO GUAIANASES"],"continent": "TERCEIRIZADA"},
+{"firstname": "EMEI VALDIR AZEVEDO (TERC)","lastname": "EMEI","description": "R. INÁCIO MONTEIRO, 333","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO GUAIANASES"],"continent": "TERCEIRIZADA"},
+{"firstname": "EMEI ENG. KLAUS REINACH - (TERCEI.)","lastname": "EMEI","description": "R. JOSÉ FRANCISCO BRANDÃO, 390","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO GUAIANASES"],"continent": "TERCEIRIZADA"},
+{"firstname": "CEI CONV. CASA DA CRIANÇA","lastname": "CEI CONVENIADO","description": "R.TANAZEIRO, 38","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO PENHA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. SEMEANDO SABER","lastname": "CEI CONVENIADO","description": "AVENIDA SANTO ANTÔNIO DO RIACHO, 500","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO PENHA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. EFRAIM","lastname": "CEI CONVENIADO","description": "AVENIDA DOUTOR  ASSIS RIBEIRO, 7620","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO PENHA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. BEM MAIOR","lastname": "CEI CONVENIADO","description": "R. ENGENHEIRO OSVALDO ANDREANI, 604","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO PENHA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. GERAÇÃO ELEITA","lastname": "CEI CONVENIADO","description": "R. JOÃO JOSÉ DE QUEIROZ, 829","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO PENHA"],"continent": "DIRETA"},
+{"firstname": "CEI CONV. FAZENDINHA AFRO BRASIL","lastname": "CEI CONVENIADO","description": "RUA: LINDÓRIO, 129","category": "2","language": ["DIRETORIA REGIONAL DE EDUCACAO PENHA"],"continent": "DIRETA"},
+
+
+{"firstname": "SME CONV. ASSOC. NOSSA ESCOLA","lastname": "SME CONVÊNIO","description": "R. MARQUÊS DE PRAIA GRANDE, 115","category": "4","language": ["DIRETORIA REGIONAL DE EDUCACAO IPIRANGA"],"continent": "DIRETA"}
+      ];
+    </script>
+
+    </div>
+  </body>
+</html>
